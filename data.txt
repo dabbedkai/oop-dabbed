@@ -1,0 +1,45 @@
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: Iron Lung
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 2
+
+Category: Scifi
+Input minutes: Minutes: 200
+
+Total minutes: 200
+Input setting: Setting: Dystopian Future
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 2
+
+Type: Sales
+Input price: 
+Total price: 299
+Register another Movie? (Y/N): 
+Another Movie: n
+
+Reports:
+For rent : 0
+For sales : 1
+VCD Total : 0
+DVD Total : 1
+Tape Total : 0
+Horror Movies : 0
+Scifi Movies : 1
+Drama Movies : 0
+Comedy Movies : 0
+Cartoons Movies : 0
