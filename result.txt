@@ -1,0 +1,410 @@
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: shawarma
+Price: 199.0
+Quantity: 2.0
+Total: 398.0
+Another product: n
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+shawarma             |          2 |     199.00 |     398.00
+============================================================
+BILL                 |                               398.00
+============================================================
+Payment: 500.0
+Change: 102.0
+Thank you for shopping
+Another customer: y
+New Customer:
+Product Name: CHippy
+Price: 10.0
+Quantity: 3.0
+Total: 30.0
+Another product: n
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+CHippy               |          3 |      10.00 |      30.00
+============================================================
+BILL                 |                                30.00
+============================================================
+Payment: 50.0
+Change: 20.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: 1
+Price: 1.0
+Quantity: 1.0
+Total: 1.0
+Another product: n
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+1                    |          1 |       1.00 |       1.00
+============================================================
+BILL                 |                                 1.00
+============================================================
+Payment: 2.0
+Change: 1.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: 1
+Price: 1.0
+Quantity: 1.0
+Total: 1.0
+Another product: n
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+1                    |          1 |       1.00 |       1.00
+============================================================
+BILL                 |                                 1.00
+============================================================
+Payment: 1.0
+Change: 0.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: 1
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 1
+
+Category: Horror
+Input minutes: Minutes: 1
+
+Total minutes: 1
+Input setting: Setting: 1
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 1
+Register another Movie? (Y/N): 
+Another Movie: n
+
+Reports:
+For rent :          1
+For sales :         0
+VCD Total :         0
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     1
+Scifi Movies :      0
+Drama Movies :      0
+Comedy Movies :     0
+Cartoons Movies :   0
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: 1
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 1
+
+Category: Horror
+Input minutes: Minutes: 1
+
+Total minutes: 1
+Input setting: Setting: 1
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 1
+Register another Movie? (Y/N): 
+Another Movie: n
+
+Reports:
+For rent :          1
+For sales :         0
+VCD Total :         0
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     1
+Scifi Movies :      0
+Drama Movies :      0
+Comedy Movies :     0
+Cartoons Movies :   0
+=== MUSIC ALBUM REGISTRATION SESSION ===
+Welcome to the Music Album Registration!
+
+Please input the following:
+Enter Album Name: 
+1
+Artist/Band Name: 
+1
+Genre: 
+1
+Record Label: 
+1
+Release Date: 
+1
+Register another Album? (Y/N): n
+Album Name: 1
+Artist/Band Name: 1
+Genre: 1
+Record Label: 1
+Release Date: 1
+Album           Artist          Genre           Record          Released       
+-------------------------------------------------------------
+1               1               1               1               1              
+
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: 1
+Price: 1.0
+Quantity: 1.0
+Total: 1.0
+Another product: 1
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+1                    |          1 |       1.00 |       1.00
+============================================================
+BILL                 |                                 1.00
+============================================================
+Payment: 1.0
+Change: 0.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: 1
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 1
+
+Category: Horror
+Input minutes: Minutes: 1
+
+Total minutes: 1
+Input setting: Setting: 1
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 1
+Register another Movie? (Y/N): 
+Another Movie: 1
+
+Reports:
+For rent :          1
+For sales :         0
+VCD Total :         0
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     1
+Scifi Movies :      0
+Drama Movies :      0
+Comedy Movies :     0
+Cartoons Movies :   0
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: 1
+Price: 1.0
+Quantity: 1.0
+Total: 1.0
+Another product: 1
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+1                    |          1 |       1.00 |       1.00
+============================================================
+BILL                 |                                 1.00
+============================================================
+Payment: 1.0
+Change: 0.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: 1
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 1
+
+Category: Horror
+Input minutes: Minutes: 1
+
+Total minutes: 1
+Input setting: Setting: 1
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 1
+Register another Movie? (Y/N): 
+Another Movie: n
+
+Reports:
+For rent :          1
+For sales :         0
+VCD Total :         0
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     1
+Scifi Movies :      0
+Drama Movies :      0
+Comedy Movies :     0
+Cartoons Movies :   0
+=== GROCERY STORE SESSION ===
+New Customer:
+Product Name: 1
+Price: 1.0
+Quantity: 1.0
+Total: 1.0
+Another product: 1
+RECEIPT:
+PRODUCT              |        QTY |      PRICE |      TOTAL
+------------------------------------------------------------
+1                    |          1 |       1.00 |       1.00
+============================================================
+BILL                 |                                 1.00
+============================================================
+Payment: 1.0
+Change: 0.0
+Thank you for shopping
+Another customer: n
+Grocery program terminating...
+
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 1
+
+Type: DVD
+Input title of the Movie: Title: 1
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 1
+
+Category: Horror
+Input minutes: Minutes: 1
+
+Total minutes: 1
+Input setting: Setting: 1
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 1
+Register another Movie? (Y/N): 
+Another Movie: n
+
+Reports:
+For rent :          1
+For sales :         0
+VCD Total :         0
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     1
+Scifi Movies :      0
+Drama Movies :      0
+Comedy Movies :     0
+Cartoons Movies :   0
+=== MUSIC ALBUM REGISTRATION SESSION ===
+Welcome to the Music Album Registration!
+
+Please input the following:
+Enter Album Name: 
+1
+Artist/Band Name: 
+1
+Genre: 
+1
+Record Label: 
+1
+Release Date: 
+1
+Register another Album? (Y/N): n
+Album Name: 1
+Artist/Band Name: 1
+Genre: 1
+Record Label: 1
+Release Date: 1
+Album           Artist          Genre           Record          Released       
+-------------------------------------------------------------
+1               1               1               1               1              
+

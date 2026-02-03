@@ -1,0 +1,47 @@
+Demon Days
+Gorillaz
+Alternative Hip/Hop
+KONG Studious
+May 23, 2005
+Grace
+Jeff Buckley
+Alternative Rock
+Columbia Records
+January 1, 1994
+loveless
+my bloody valenine
+Shoegaze
+Domino Recording Company
+November 4, 1991
+Wish You Were Here
+Pink Floyd
+Progressive Rock
+EMI Studios
+September 12, 1975
+OK Computer
+Radiohead
+Alternative Rock
+Canned Applause
+May 28, 1997
+Weezer
+Weezer
+Alternative Rock
+Electric Lady Studios in NYC
+May 10, 1994
+The Colour And The Shape
+Foo Fighters
+Alternative Rock
+Roswell Records
+May 20, 1997
+Around The Fur
+Deftones
+Alternative Metal
+Warner Music Group
+October 27, 1997
+
+
+String albumName[] = new String[50];
+        String artistName[] = new String[50];
+        String genre[] = new String[50];
+        String recordLabel[] = new String[50];
+        String releaseDate[] = new String[50];

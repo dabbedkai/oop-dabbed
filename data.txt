@@ -5,7 +5,7 @@ Please select an option:
 Option: 1
 
 Type: DVD
-Input title of the Movie: Title: Iron Lung
+Input title of the Movie: Title: IRON LUNG
 
 Please select an option:
 1. Horror
@@ -19,7 +19,39 @@ Category: Scifi
 Input minutes: Minutes: 200
 
 Total minutes: 200
-Input setting: Setting: Dystopian Future
+Input setting: Setting: DYSTOPIAN FUTURE
+
+Please select an option:
+1. Rental
+2. Sales
+Option: 1
+
+Type: Rental
+Input price: 
+Total price: 99
+Register another Movie? (Y/N): 
+Another Movie: Y
+Please select an option:
+1. DVD
+2. VCD
+3. Tape
+Option: 2
+
+Type: VCD
+Input title of the Movie: Title: ANACONDA
+
+Please select an option:
+1. Horror
+2. Scifi
+3. Drama
+4. Comedy
+5. Cartoons
+Option: 4
+Category: Comedy
+Input minutes: Minutes: 199
+
+Total minutes: 199
+Input setting: Setting: AMAZON JUNGLE
 
 Please select an option:
 1. Rental
@@ -30,16 +62,16 @@ Type: Sales
 Input price: 
 Total price: 299
 Register another Movie? (Y/N): 
-Another Movie: n
+Another Movie: N
 
 Reports:
-For rent : 0
-For sales : 1
-VCD Total : 0
-DVD Total : 1
-Tape Total : 0
-Horror Movies : 0
-Scifi Movies : 1
-Drama Movies : 0
-Comedy Movies : 0
-Cartoons Movies : 0
+For rent :          1
+For sales :         1
+VCD Total :         1
+DVD Total :         1
+Tape Total :        0
+Horror Movies :     0
+Scifi Movies :      1
+Drama Movies :      0
+Comedy Movies :     1
+Cartoons Movies :   0

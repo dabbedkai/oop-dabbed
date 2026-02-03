@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class DataStrucActivity {
+public class Activity4 {
 
     public static void main(String[] args) {
 
@@ -168,16 +168,16 @@ public class DataStrucActivity {
             String result = ("""
 
                 Reports:
-                For rent : %d
-                For sales : %d
-                VCD Total : %d
-                DVD Total : %d
-                Tape Total : %d
-                Horror Movies : %d
-                Scifi Movies : %d
-                Drama Movies : %d
-                Comedy Movies : %d
-                Cartoons Movies : %d
+                For rent :          %d
+                For sales :         %d
+                VCD Total :         %d
+                DVD Total :         %d
+                Tape Total :        %d
+                Horror Movies :     %d
+                Scifi Movies :      %d
+                Drama Movies :      %d
+                Comedy Movies :     %d
+                Cartoons Movies :   %d
                 """);
             String resultFormatted = result.formatted(rent, sales, vcdTotal, dvdTotal, tapeTotal, Horror, Scifi, Drama, Comedy, Cartoons);
             sb.append(resultFormatted);
@@ -191,3 +191,4 @@ public class DataStrucActivity {
     }
 
 }
+
