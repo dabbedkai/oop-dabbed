@@ -1,10 +1,10 @@
-package finalproject;
+package newActivity;
 
-public class Question {
+class Question {
     private String questionText;
     private String optionA, optionB, optionC, optionD;
     private String correctAnswer;
-    private String userAnswer; 
+    private String userAnswer;
 
     public Question(String qText, String a, String b, String c, String d, String answer) {
         this.questionText = qText;
@@ -13,7 +13,7 @@ public class Question {
         this.optionC = c;
         this.optionD = d;
         this.correctAnswer = answer;
-        this.userAnswer = ""; 
+        this.userAnswer = "";
     }
 
     public String getQuestionText() { return questionText; }

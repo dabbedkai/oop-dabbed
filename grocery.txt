@@ -1,12 +1,12 @@
 ========================================
-Product Name: Chippy
+Product: Chippy
 Price: 10
-Quantity: 10
+Qty: 10
 ----------------------------------------
 
 ========================================
-Product Name: Product Name: Kaizer
+Product: Product Name: Kaizer
 Price: Price: 300
-Quantity: Quantity: 2
+Qty: Quantity: 2
 ----------------------------------------
 

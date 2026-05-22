@@ -1,0 +1,415 @@
+████████████████████████████████████████████████████████████
+              SYSTEM INTERACTION RECEIPT / LOG              
+              Session Start: 2026-05-22 13:09:34             
+████████████████████████████████████████████████████████████
+
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔════════════════════════════════════════════════════╗
+  ║             FINAL PROJECT MAIN SYSTEM              ║
+  ╚════════════════════════════════════════════════════╝
+
+  [ 1 ] Ultimate Trivia Game
+  [ 2 ] Service Center (Grocery/Movie/Music)
+  [ 3 ] Exit System
+
+  ➤ Choose an option: 1
+
+[==================== SCREEN CLEARED ====================]
+
+
+  Loading game data...
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔════════════════════════════════════════════════════╗
+  ║                ULTIMATE TRIVIA QUIZ                ║
+  ╚════════════════════════════════════════════════════╝
+
+  [ 1 ] Login
+  [ 2 ] Register (Add Player)
+  [ 3 ] View Leaderboard
+  [ 4 ] Admin Panel
+  [ 5 ] Back to Main System
+
+  ➤ Select an option: 1
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔════════════════════════════════════════════════════╗
+  ║                    SECURE LOGIN                    ║
+  ╚════════════════════════════════════════════════════╝
+
+  Username: kaizer
+  Password: david
+
+  [✔] Authentication successful. Welcome, kaizer!
+
+  Press [ENTER] to continue...
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔════════════════════════════════════════════════════╗
+  ║                  PLAYER DASHBOARD                  ║
+  ╚════════════════════════════════════════════════════╝
+
+  Player: kaizer          │ High Score: 7
+  ────────────────────────────────────────────────────
+  [ 1 ] Play Game
+  [ 2 ] Logout
+
+  ➤ Choice: 1
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Which chemical element has the symbol 'O'?                   ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Gold                         B) Osmium                       ║
+  ║ C) Oxygen                       D) Oganesson                    ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What is the powerhouse of the cell?                          ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Nucleus                      B) Ribosome                     ║
+  ║ C) Mitochondria                 D) Chloroplast                  ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: 
+  [!] Invalid command.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What is the powerhouse of the cell?                          ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Nucleus                      B) Ribosome                     ║
+  ║ C) Mitochondria                 D) Chloroplast                  ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: v
+  [!] Invalid command.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What is the powerhouse of the cell?                          ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Nucleus                      B) Ribosome                     ║
+  ║ C) Mitochondria                 D) Chloroplast                  ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: b
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Which country gave the Statue of Liberty to the USA?         ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Spain                        B) United Kingdom               ║
+  ║ C) Germany                      D) France                       ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: c
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Which of the following is NOT an object-oriented language?   ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Java                         B) C++                          ║
+  ║ C) Python                       D) C                            ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: d
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What does HTML stand for?                                    ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) HyperText Markup Lang        B) HyperTool Multi Logic        ║
+  ║ C) HighTech Multi Layer         D) HyperText Machine Lang       ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Who painted the famous artwork 'Starry Night'?               ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Pablo Picasso                B) Vincent van Gogh             ║
+  ║ C) Claude Monet                 D) Leonardo da Vinci            ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: v
+  [!] Invalid command.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Who painted the famous artwork 'Starry Night'?               ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Pablo Picasso                B) Vincent van Gogh             ║
+  ║ C) Claude Monet                 D) Leonardo da Vinci            ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: b
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: In the Harry Potter series, what is the core of Harry's wand ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Dragon Heartstring           B) Phoenix Feather              ║
+  ║ C) Unicorn Hair                 D) Thestral Tail Hair           ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: c
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What is the capital city of Japan?                           ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Kyoto                        B) Osaka                        ║
+  ║ C) Tokyo                        D) Hiroshima                    ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: d
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: Which ocean is the largest by surface area?                  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) Atlantic Ocean               B) Indian Ocean                 ║
+  ║ C) Arctic Ocean                 D) Pacific Ocean                ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: b
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Unanswered ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: 
+  [!] Invalid command.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: a
+
+  [★] Answer saved! You are on the last question. Type SUBMIT to finish.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: 
+  [!] Invalid command.
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: submit
+  ➤ Submit quiz and finish? (YES/NO): y
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔═════════════════════════════════════════════════════════════════╗
+  ║ Q: What symbol is used to denote single-line comments in Java?  ║
+  ╠═════════════════════════════════════════════════════════════════╣
+  ║ A) //                           B) #                            ║
+  ║ C) /*                           D) <!--                         ║
+  ╚═════════════════════════════════════════════════════════════════╝
+
+  [ Selected Answer: A ]
+
+  Actions: [A/B/C/D] Select │ [NEXT] Skip │ [BACK] │ [SUBMIT]
+  ➤ Input: submit
+  ➤ Submit quiz and finish? (YES/NO): yes
+
+[==================== SCREEN CLEARED ====================]
+
+  ╔════════════════════════════════════════════════════╗
+  ║                    QUIZ RESULTS                    ║
+  ╚════════════════════════════════════════════════════╝
+
+  FINAL SCORE: 4 / 10
+
+  Press [ENTER] to continue...

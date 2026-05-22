@@ -1,4 +1,4 @@
-package finalproject;
+package newActivity;
 
 public class User {
     private String username;

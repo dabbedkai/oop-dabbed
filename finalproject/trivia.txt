@@ -1,0 +1,20 @@
+In computer science, what does 'RAM' stand for?|Read Access Memory|Random Access Memory|Run Action Mode|Rapid Access Machine|B
+Which planet in our solar system is the hottest?|Venus|Mars|Mercury|Jupiter|A
+What is the powerhouse of the cell?|Nucleus|Ribosome|Mitochondria|Chloroplast|C
+Who is recognized as the first computer programmer?|Alan Turing|Charles Babbage|Ada Lovelace|Bill Gates|C
+Which chemical element has the symbol 'O'?|Gold|Osmium|Oxygen|Oganesson|C
+In what year did the Apollo 11 moon landing occur?|1965|1969|1971|1975|B
+What does HTML stand for?|HyperText Markup Lang|HyperTool Multi Logic|HighTech Multi Layer|HyperText Machine Lang|A
+Which of the following is NOT an object-oriented language?|Java|C++|Python|C|D
+What is the capital city of Japan?|Kyoto|Osaka|Tokyo|Hiroshima|C
+What is the largest organ in the human body?|Heart|Liver|Brain|Skin|D
+Which video game franchise features the character 'Master Chief'?|Call of Duty|Halo|Gears of War|Doom|B
+What is the hardest natural mineral on Earth?|Quartz|Topaz|Diamond|Corundum|C
+What symbol is used to denote single-line comments in Java?|//|#|/*|<!--|A
+Who painted the famous artwork 'Starry Night'?|Pablo Picasso|Vincent van Gogh|Claude Monet|Leonardo da Vinci|B
+Which ocean is the largest by surface area?|Atlantic Ocean|Indian Ocean|Arctic Ocean|Pacific Ocean|D
+In the Harry Potter series, what is the core of Harry's wand?|Dragon Heartstring|Phoenix Feather|Unicorn Hair|Thestral Tail Hair|B
+What company developed the Android operating system?|Apple|Microsoft|Google|Samsung|C
+What is the smallest prime number?|0|1|2|3|C
+Which country gave the Statue of Liberty to the USA?|Spain|United Kingdom|Germany|France|D
+In geometry, how many sides does a heptagon have?|5|6|7|8|C

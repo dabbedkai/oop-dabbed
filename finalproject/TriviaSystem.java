@@ -7,206 +7,197 @@ public class TriviaSystem {
     private static final String USER_FILE = "users.txt";
     private static final String QUIZ_FILE = "trivia.txt";
 
-    // arraylists to hold our data
     private static ArrayList<User> users = new ArrayList<>();
     private static ArrayList<Question> questions = new ArrayList<>();
 
     public static void startTrivia() {
-        System.out.println("loading game data...");
+        MainSystem.clearScreen();
+        InteractionLogger.println(MainSystem.CYAN + "\n  Loading game data..." + MainSystem.RESET);
         loadUsers();
         loadQuestions();
 
         boolean inTrivia = true;
         while (inTrivia) {
-            System.out.println("\n=== ULTIMATE TRIVIA QUIZ ===");
-            System.out.println("1. Login");
-            System.out.println("2. Register (Add Player)");
-            System.out.println("3. View Leaderboard");
-            System.out.println("4. Admin Panel (Manage Users/Questions)");
-            System.out.println("5. Back to Main System");
-            System.out.print("Select an option: ");
+            MainSystem.printHeader("ULTIMATE TRIVIA QUIZ");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 1 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Login");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 2 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Register (Add Player)");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 3 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " View Leaderboard");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 4 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Admin Panel");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 5 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Back to Main System");
+            InteractionLogger.println();
+            InteractionLogger.print(MainSystem.YELLOW + "  ➤ Select an option: " + MainSystem.RESET);
 
-            String choice = MainSystem.scanner.nextLine().trim();
+            String choice = InteractionLogger.getInput();
 
             switch (choice) {
                 case "1":
                     User loggedInUser = handleLogin();
-                    if (loggedInUser != null) {
-                        playerMenu(loggedInUser);
-                    }
+                    if (loggedInUser != null) playerMenu(loggedInUser);
                     break;
-                case "2":
-                    handleRegister();
-                    break;
-                case "3":
-                    showLeaderboard();
-                    break;
-                case "4":
-                    adminPanel();
-                    break;
+                case "2": handleRegister(); break;
+                case "3": showLeaderboard(); break;
+                case "4": adminPanel(); break;
                 case "5":
                     saveUsers();
                     saveQuestions();
                     inTrivia = false;
                     break;
-                default:
-                    System.out.println("invalid choice.");
-                    break;
+                default: MainSystem.showError("Invalid choice. Please try again."); break;
             }
         }
     }
-
-    // --- PLAYER STUFF ---
 
     private static void playerMenu(User player) {
         boolean loggedIn = true;
         while (loggedIn) {
-            System.out.println("\n--- PLAYER MENU ---");
-            System.out.println("Welcome, " + player.getUsername() + " | High Score: " + player.getHighScore());
-            System.out.println("1. Play Game");
-            System.out.println("2. Logout");
-            System.out.print("Choice: ");
+            MainSystem.printHeader("PLAYER DASHBOARD");
+            InteractionLogger.print(String.format("  Player: %s%-15s%s │ High Score: %s%d%s\n", 
+                MainSystem.GREEN + MainSystem.BOLD, player.getUsername(), MainSystem.RESET, 
+                MainSystem.YELLOW + MainSystem.BOLD, player.getHighScore(), MainSystem.RESET));
+            InteractionLogger.println(MainSystem.CYAN + "  ────────────────────────────────────────────────────" + MainSystem.RESET);
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 1 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Play Game");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 2 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Logout");
+            InteractionLogger.println();
+            InteractionLogger.print(MainSystem.YELLOW + "  ➤ Choice: " + MainSystem.RESET);
 
-            String choice = MainSystem.scanner.nextLine().trim();
-
-            if (choice.equals("1")) {
-                playTrivia(player);
-            } else if (choice.equals("2")) {
-                loggedIn = false;
-            } else {
-                System.out.println("invalid selection.");
-            }
+            String choice = InteractionLogger.getInput();
+            if (choice.equals("1")) playTrivia(player);
+            else if (choice.equals("2")) loggedIn = false;
+            else MainSystem.showError("Invalid selection.");
         }
     }
 
     private static User handleLogin() {
-        System.out.print("Username: ");
-        String username = MainSystem.scanner.nextLine().trim();
-        System.out.print("Password: ");
-        String password = MainSystem.scanner.nextLine().trim();
+        MainSystem.printHeader("SECURE LOGIN");
+        InteractionLogger.print("  Username: ");
+        String username = InteractionLogger.getInput();
+        InteractionLogger.print("  Password: ");
+        String password = InteractionLogger.getInput();
 
-        // loop to find user
-        for (int i = 0; i < users.size(); i++) {
-            User u = users.get(i);
+        for (User u : users) {
             if (u.getUsername().equalsIgnoreCase(username) && u.getPassword().equals(password)) {
-                System.out.println("login successful!");
+                MainSystem.showSuccess("Authentication successful. Welcome, " + u.getUsername() + "!");
+                MainSystem.pause();
                 return u;
             }
         }
-        System.out.println("login failed. wrong username or password.");
+        MainSystem.showError("Login failed. Incorrect credentials.");
         return null;
     }
 
     private static void handleRegister() {
-        System.out.print("Enter new username: ");
-        String username = MainSystem.scanner.nextLine().trim();
+        MainSystem.printHeader("PLAYER REGISTRATION");
+        InteractionLogger.print("  Enter new username: ");
+        String username = InteractionLogger.getInput();
         
-        // check if user already exists
         for (User u : users) {
             if (u.getUsername().equalsIgnoreCase(username)) {
-                System.out.println("username already taken!");
+                MainSystem.showError("Username already taken!");
                 return;
             }
         }
 
-        System.out.print("Enter password: ");
-        String password = MainSystem.scanner.nextLine().trim();
+        InteractionLogger.print("  Enter password: ");
+        String password = InteractionLogger.getInput();
 
         if (!username.isEmpty() && !password.isEmpty()) {
             users.add(new User(username, password, 0));
             saveUsers();
-            System.out.println("registered successfully!");
+            MainSystem.showSuccess("Registered successfully! You can now log in.");
         } else {
-            System.out.println("fields cannot be empty.");
+            MainSystem.showError("Fields cannot be empty.");
         }
+        MainSystem.pause();
     }
 
     private static void showLeaderboard() {
+        MainSystem.printHeader("GLOBAL LEADERBOARD");
         if (users.isEmpty()) {
-            System.out.println("no users yet.");
+            InteractionLogger.println(MainSystem.YELLOW + "  No users registered yet." + MainSystem.RESET);
+            MainSystem.pause();
             return;
         }
 
-        // basic bubble sort to sort users by high score (descending)
-        for (int i = 0; i < users.size() - 1; i++) {
-            for (int j = 0; j < users.size() - i - 1; j++) {
-                if (users.get(j).getHighScore() < users.get(j + 1).getHighScore()) {
-                    // swap
-                    User temp = users.get(j);
-                    users.set(j, users.get(j + 1));
-                    users.set(j + 1, temp);
-                }
-            }
-        }
+        users.sort((u1, u2) -> Integer.compare(u2.getHighScore(), u1.getHighScore()));
 
-        System.out.println("\n--- LEADERBOARD ---");
+        InteractionLogger.print(String.format(MainSystem.YELLOW + MainSystem.BOLD + "  %-8s │ %-20s │ %-10s\n" + MainSystem.RESET, "RANK", "USERNAME", "SCORE"));
+        InteractionLogger.println(MainSystem.PURPLE + "  ─────────┼──────────────────────┼───────────" + MainSystem.RESET);
         for (int i = 0; i < users.size(); i++) {
-            System.out.println((i + 1) + ". " + users.get(i).getUsername() + " - " + users.get(i).getHighScore() + " pts");
+            String rank = (i == 0) ? "🥇 #1" : (i == 1) ? "🥈 #2" : (i == 2) ? "🥉 #3" : "   #" + (i + 1);
+            InteractionLogger.print(String.format("  %-8s │ " + MainSystem.CYAN + "%-20s" + MainSystem.RESET + " │ " + MainSystem.GREEN + "%-10d\n" + MainSystem.RESET, rank, users.get(i).getUsername(), users.get(i).getHighScore()));
         }
+        InteractionLogger.println();
+        MainSystem.pause();
     }
-
-    // --- GAMEPLAY MODULE (IMPLEMENTS STACKS) ---
 
     private static void playTrivia(User player) {
         if (questions.isEmpty()) {
-            System.out.println("no questions available. tell admin to add some.");
+            MainSystem.showError("No questions available in database.");
             return;
         }
 
-        System.out.println("\nsetting up your quiz...");
-
-        // copy and shuffle questions so no repeats and it's random
         ArrayList<Question> playList = new ArrayList<>(questions);
         Collections.shuffle(playList);
-
         int totalQuestions = Math.min(10, playList.size());
         
-        // clear previous answers just in case
-        for (int i = 0; i < totalQuestions; i++) {
-            playList.get(i).setUserAnswer("");
-        }
+        for (int i = 0; i < totalQuestions; i++) playList.get(i).setUserAnswer("");
 
-        // use stacks for navigation
         Stack<Question> backStack = new Stack<>();
         Stack<Question> nextStack = new Stack<>();
 
-        // push questions to nextStack in reverse so the first question is on top
-        for (int i = totalQuestions - 1; i >= 0; i--) {
-            nextStack.push(playList.get(i));
-        }
+        for (int i = totalQuestions - 1; i >= 0; i--) nextStack.push(playList.get(i));
 
         Question currentQuestion = nextStack.pop();
         boolean takingQuiz = true;
 
         while (takingQuiz) {
-            System.out.println("\n====================================");
-            System.out.println("Question: " + currentQuestion.getQuestionText());
-            System.out.println("A) " + currentQuestion.getOptionA());
-            System.out.println("B) " + currentQuestion.getOptionB());
-            System.out.println("C) " + currentQuestion.getOptionC());
-            System.out.println("D) " + currentQuestion.getOptionD());
-            System.out.println("====================================");
+            MainSystem.clearScreen();
+            
+            // Format Question nicely
+            InteractionLogger.println(MainSystem.CYAN + "  ╔═════════════════════════════════════════════════════════════════╗");
+            String qText = currentQuestion.getQuestionText();
+            if (qText.length() > 61) {
+                InteractionLogger.print(String.format("  ║ Q: %-60.60s ║\n", qText.substring(0, 60)));
+                InteractionLogger.print(String.format("  ║    %-60.60s ║\n", qText.substring(60)));
+            } else {
+                InteractionLogger.print(String.format("  ║ Q: %-60.60s ║\n", qText));
+            }
+            
+            InteractionLogger.println("  ╠═════════════════════════════════════════════════════════════════╣");
+            // [FIXED] Changed spacing from %-27.27s to %-28.28s to perfectly align the borders!
+            InteractionLogger.print(String.format("  ║ A) %-28.28s B) %-28.28s ║\n", currentQuestion.getOptionA(), currentQuestion.getOptionB()));
+            InteractionLogger.print(String.format("  ║ C) %-28.28s D) %-28.28s ║\n", currentQuestion.getOptionC(), currentQuestion.getOptionD()));
+            InteractionLogger.println("  ╚═════════════════════════════════════════════════════════════════╝" + MainSystem.RESET);
 
             if (!currentQuestion.getUserAnswer().isEmpty()) {
-                System.out.println("your current answer: " + currentQuestion.getUserAnswer());
+                InteractionLogger.println(MainSystem.GREEN + "\n  [ Selected Answer: " + currentQuestion.getUserAnswer() + " ]" + MainSystem.RESET);
+            } else {
+                InteractionLogger.println(MainSystem.YELLOW + "\n  [ Unanswered ]" + MainSystem.RESET);
             }
 
-            System.out.println("\n[A/B/C/D] to answer | [NEXT] forward | [BACK] previous | [SUBMIT] finish");
-            System.out.print("Action: ");
+            InteractionLogger.println(MainSystem.PURPLE + "\n  Actions: " + MainSystem.WHITE + "[A/B/C/D]" + MainSystem.PURPLE + " Select │ " + MainSystem.WHITE + "[NEXT]" + MainSystem.PURPLE + " Skip │ " + MainSystem.WHITE + "[BACK]" + MainSystem.PURPLE + " │ " + MainSystem.WHITE + "[SUBMIT]" + MainSystem.RESET);
+            InteractionLogger.print(MainSystem.YELLOW + "  ➤ Input: " + MainSystem.RESET);
 
-            String input = MainSystem.scanner.nextLine().trim().toUpperCase();
+            String input = InteractionLogger.getInput().toUpperCase();
 
             switch (input) {
                 case "A": case "B": case "C": case "D":
                     currentQuestion.setUserAnswer(input);
-                    System.out.println("answer recorded.");
+                    if (!nextStack.isEmpty()) {
+                        backStack.push(currentQuestion);
+                        currentQuestion = nextStack.pop();
+                    } else {
+                        InteractionLogger.println(MainSystem.GREEN + "\n  [★] Answer saved! You are on the last question. Type SUBMIT to finish." + MainSystem.RESET);
+                        try { Thread.sleep(1500); } catch (Exception e) {}
+                    }
                     break;
                 case "NEXT":
                     if (!nextStack.isEmpty()) {
                         backStack.push(currentQuestion);
                         currentQuestion = nextStack.pop();
                     } else {
-                        System.out.println("this is the last question. type SUBMIT to finish.");
+                        InteractionLogger.println(MainSystem.RED + "  [!] You are on the last question." + MainSystem.RESET);
+                        try { Thread.sleep(1000); } catch (Exception e) {}
                     }
                     break;
                 case "BACK":
@@ -214,204 +205,158 @@ public class TriviaSystem {
                         nextStack.push(currentQuestion);
                         currentQuestion = backStack.pop();
                     } else {
-                        System.out.println("you are on the first question.");
+                        InteractionLogger.println(MainSystem.RED + "  [!] You are on the first question." + MainSystem.RESET);
+                        try { Thread.sleep(1000); } catch (Exception e) {}
                     }
                     break;
                 case "SUBMIT":
-                    System.out.print("submit quiz? (YES/NO): ");
-                    String confirm = MainSystem.scanner.nextLine().trim().toUpperCase();
-                    if (confirm.equals("YES")) {
-                        // push the current one back so it gets graded
+                    InteractionLogger.print(MainSystem.YELLOW + "  ➤ Submit quiz and finish? (YES/NO): " + MainSystem.RESET);
+                    if (InteractionLogger.getInput().toUpperCase().equals("YES")) {
                         backStack.push(currentQuestion); 
                         takingQuiz = false;
                     }
                     break;
                 default:
-                    System.out.println("invalid input.");
+                    InteractionLogger.println(MainSystem.RED + "  [!] Invalid command." + MainSystem.RESET);
+                    try { Thread.sleep(1000); } catch (Exception e) {}
                     break;
             }
         }
 
-        // calculate score
         int score = 0;
-        // combine all answered questions from stacks
         ArrayList<Question> allAnswered = new ArrayList<>();
         allAnswered.addAll(backStack);
         allAnswered.addAll(nextStack);
 
         for (Question q : allAnswered) {
-            if (q.getUserAnswer().equals(q.getCorrectAnswer().toUpperCase())) {
-                score++;
-            }
+            if (q.getUserAnswer().equals(q.getCorrectAnswer().toUpperCase())) score++;
         }
 
-        System.out.println("\n--- GAME OVER ---");
-        System.out.println("You scored: " + score + " out of " + totalQuestions);
+        MainSystem.printHeader("QUIZ RESULTS");
+        InteractionLogger.println(MainSystem.GREEN + MainSystem.BOLD + "  FINAL SCORE: " + score + " / " + totalQuestions + MainSystem.RESET);
 
         if (score > player.getHighScore()) {
-            System.out.println("new high score! awesome job.");
+            InteractionLogger.println(MainSystem.YELLOW + MainSystem.BOLD + "\n  ★ CONGRATULATIONS! NEW HIGH SCORE! ★" + MainSystem.RESET);
             player.setHighScore(score);
             saveUsers();
         }
+        MainSystem.pause();
     }
 
-    // --- ADMIN MODULE (CRUD FOR USERS & QUESTIONS) ---
-
     private static void adminPanel() {
-        System.out.println("\n-- ADMIN LOGIN --");
-        System.out.print("Admin Password (type 'admin'): ");
-        String pass = MainSystem.scanner.nextLine();
-        
-        if (!pass.equals("admin")) {
-            System.out.println("access denied.");
+        MainSystem.printHeader("SYSTEM ADMINISTRATOR");
+        InteractionLogger.print("  Admin Password: ");
+        if (!InteractionLogger.getInput().equals("admin")) {
+            MainSystem.showError("Access Denied.");
             return;
         }
 
         boolean inAdmin = true;
         while (inAdmin) {
-            System.out.println("\n=== ADMIN PANEL ===");
-            System.out.println("1. List All Users");
-            System.out.println("2. Delete User");
-            System.out.println("3. List All Questions");
-            System.out.println("4. Add Question");
-            System.out.println("5. Delete Question");
-            System.out.println("6. Search Question");
-            System.out.println("7. Back");
-            System.out.print("Choice: ");
+            MainSystem.printHeader("ADMIN CONTROL PANEL");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 1 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " List All Users");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 2 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Delete User");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 3 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " List All Questions");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 4 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Add New Question");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 5 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Delete Question");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 6 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Search Question DB");
+            InteractionLogger.println("  " + MainSystem.CYAN + "[" + MainSystem.BOLD + " 7 " + MainSystem.RESET + MainSystem.CYAN + "]" + MainSystem.RESET + " Log Out Admin");
+            InteractionLogger.println();
+            InteractionLogger.print(MainSystem.YELLOW + "  ➤ Execute Command: " + MainSystem.RESET);
 
-            String choice = MainSystem.scanner.nextLine().trim();
+            String choice = InteractionLogger.getInput();
 
             switch (choice) {
                 case "1":
-                    for (User u : users) {
-                        System.out.println("- " + u.getUsername() + " (Score: " + u.getHighScore() + ")");
-                    }
+                    MainSystem.printHeader("REGISTERED USERS");
+                    for (User u : users) InteractionLogger.println("  • " + MainSystem.CYAN + u.getUsername() + MainSystem.RESET + " (" + u.getHighScore() + " pts)");
+                    MainSystem.pause();
                     break;
                 case "2":
-                    System.out.print("enter username to delete: ");
-                    String delUser = MainSystem.scanner.nextLine();
-                    boolean userFound = false;
-                    for (int i = 0; i < users.size(); i++) {
-                        if (users.get(i).getUsername().equalsIgnoreCase(delUser)) {
-                            users.remove(i);
-                            System.out.println("user deleted.");
-                            saveUsers();
-                            userFound = true;
-                            break;
-                        }
-                    }
-                    if (!userFound) System.out.println("user not found.");
+                    InteractionLogger.print("\n  Target Username for Deletion: ");
+                    String delUser = InteractionLogger.getInput();
+                    boolean found = users.removeIf(u -> u.getUsername().equalsIgnoreCase(delUser));
+                    if (found) {
+                        MainSystem.showSuccess("User permanently deleted.");
+                        saveUsers();
+                    } else MainSystem.showError("User record not found.");
                     break;
                 case "3":
-                    for (int i = 0; i < questions.size(); i++) {
-                        System.out.println("[" + i + "] " + questions.get(i).getQuestionText());
-                    }
+                    MainSystem.printHeader("QUESTION DATABASE");
+                    for (int i = 0; i < questions.size(); i++) InteractionLogger.println("  [" + i + "] " + questions.get(i).getQuestionText());
+                    MainSystem.pause();
                     break;
                 case "4":
-                    System.out.print("Question Text: ");
-                    String qt = MainSystem.scanner.nextLine();
-                    System.out.print("Option A: "); String a = MainSystem.scanner.nextLine();
-                    System.out.print("Option B: "); String b = MainSystem.scanner.nextLine();
-                    System.out.print("Option C: "); String c = MainSystem.scanner.nextLine();
-                    System.out.print("Option D: "); String d = MainSystem.scanner.nextLine();
-                    System.out.print("Correct Answer (A/B/C/D): "); String ans = MainSystem.scanner.nextLine();
+                    InteractionLogger.print("\n  Prompt Text: "); String qt = InteractionLogger.getInput();
+                    InteractionLogger.print("  Option A:    "); String a = InteractionLogger.getInput();
+                    InteractionLogger.print("  Option B:    "); String b = InteractionLogger.getInput();
+                    InteractionLogger.print("  Option C:    "); String c = InteractionLogger.getInput();
+                    InteractionLogger.print("  Option D:    "); String d = InteractionLogger.getInput();
+                    InteractionLogger.print("  Correct Letter (A/B/C/D): "); String ans = InteractionLogger.getInput().toUpperCase();
                     
-                    questions.add(new Question(qt, a, b, c, d, ans));
-                    saveQuestions();
-                    System.out.println("question added.");
+                    if (qt.isEmpty() || ans.isEmpty()) {
+                        MainSystem.showError("Invalid formatting. Operation cancelled.");
+                    } else {
+                        questions.add(new Question(qt, a, b, c, d, ans));
+                        saveQuestions();
+                        MainSystem.showSuccess("Question saved to DB.");
+                    }
                     break;
                 case "5":
-                    System.out.print("enter question index to delete: ");
-                    try {
-                        int index = Integer.parseInt(MainSystem.scanner.nextLine());
+                    int index = MainSystem.getValidInt("\n  Enter Question Index ID to delete: ");
+                    if (index >= 0 && index < questions.size()) {
                         questions.remove(index);
                         saveQuestions();
-                        System.out.println("question deleted.");
-                    } catch (Exception e) {
-                        System.out.println("invalid index.");
+                        MainSystem.showSuccess("Question purged.");
+                    } else {
+                        MainSystem.showError("Index out of bounds. Question not found.");
                     }
                     break;
                 case "6":
-                    System.out.print("enter keyword: ");
-                    String keyword = MainSystem.scanner.nextLine().toLowerCase();
+                    InteractionLogger.print("\n  Search DB Query: ");
+                    String kw = InteractionLogger.getInput().toLowerCase();
                     for (Question q : questions) {
-                        if (q.getQuestionText().toLowerCase().contains(keyword)) {
-                            System.out.println("found: " + q.getQuestionText());
-                        }
+                        if (q.getQuestionText().toLowerCase().contains(kw)) InteractionLogger.println("  Match: " + q.getQuestionText());
                     }
+                    MainSystem.pause();
                     break;
-                case "7":
-                    inAdmin = false;
-                    break;
-                default:
-                    System.out.println("invalid.");
-                    break;
+                case "7": inAdmin = false; break;
+                default: MainSystem.showError("Unrecognized command."); break;
             }
         }
     }
-
-    // --- FILE I/O ---
 
     private static void loadUsers() {
         users.clear();
-        try {
-            File file = new File(USER_FILE);
-            if (!file.exists()) return;
-            
-            Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()) {
-                String[] parts = fileReader.nextLine().split(",");
-                if (parts.length == 3) {
-                    users.add(new User(parts[0], parts[1], Integer.parseInt(parts[2])));
+        try (Scanner s = new Scanner(new File(USER_FILE))) {
+            while (s.hasNextLine()) {
+                String[] p = s.nextLine().split(",");
+                if (p.length == 3) {
+                    try { users.add(new User(p[0], p[1], Integer.parseInt(p[2]))); } catch (NumberFormatException e) {}
                 }
             }
-            fileReader.close();
-        } catch (Exception e) {
-            System.out.println("could not load users.");
-        }
+        } catch (Exception e) {}
     }
 
     private static void saveUsers() {
-        try {
-            PrintWriter pw = new PrintWriter(new FileWriter(USER_FILE));
-            for (User u : users) {
-                pw.println(u.getUsername() + "," + u.getPassword() + "," + u.getHighScore());
-            }
-            pw.close();
-        } catch (Exception e) {
-            System.out.println("error saving users.");
-        }
+        try (PrintWriter pw = new PrintWriter(new FileWriter(USER_FILE))) {
+            for (User u : users) pw.println(u.getUsername() + "," + u.getPassword() + "," + u.getHighScore());
+        } catch (Exception e) {}
     }
 
     private static void loadQuestions() {
         questions.clear();
-        try {
-            File file = new File(QUIZ_FILE);
-            if (!file.exists()) return;
-
-            Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()) {
-                String[] parts = fileReader.nextLine().split("\\|");
-                if (parts.length == 6) {
-                    questions.add(new Question(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]));
-                }
+        try (Scanner s = new Scanner(new File(QUIZ_FILE))) {
+            while (s.hasNextLine()) {
+                String[] p = s.nextLine().split("\\|");
+                if (p.length == 6) questions.add(new Question(p[0], p[1], p[2], p[3], p[4], p[5]));
             }
-            fileReader.close();
-        } catch (Exception e) {
-            System.out.println("could not load questions.");
-        }
+        } catch (Exception e) {}
     }
 
     private static void saveQuestions() {
-        try {
-            PrintWriter pw = new PrintWriter(new FileWriter(QUIZ_FILE));
-            for (Question q : questions) {
-                pw.println(q.getQuestionText() + "|" + q.getOptionA() + "|" + q.getOptionB() + "|" + 
-                           q.getOptionC() + "|" + q.getOptionD() + "|" + q.getCorrectAnswer());
-            }
-            pw.close();
-        } catch (Exception e) {
-            System.out.println("error saving questions.");
-        }
+        try (PrintWriter pw = new PrintWriter(new FileWriter(QUIZ_FILE))) {
+            for (Question q : questions) pw.println(q.getQuestionText() + "|" + q.getOptionA() + "|" + q.getOptionB() + "|" + q.getOptionC() + "|" + q.getOptionD() + "|" + q.getCorrectAnswer());
+        } catch (Exception e) {}
     }
 }
